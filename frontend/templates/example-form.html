@@ -1,0 +1,55 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+{% comment %}
+
+EXTRA SETTINGS EXAMPLE:
+get_setting 'SUBTITLE' default=''
+
+{% endcomment %}
+
+{% block content  %}
+
+<!--  contact -->
+<div class="contact">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="titlepage">
+              <h2>Как с нами связвться?</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form id="request"  method="POST"  class="main_form">
+              {% csrf_token %}
+              <input class="d-none" type="number" id="category" name="category" value="0">
+              <div class="row">
+                  <div class="col-md-12 ">
+                    {% comment %} <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> {% endcomment %}
+                    {% render_field form.name class+="contactus" placeholder=form.name.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.email class+="contactus" placeholder=form.email.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.phone class+="contactus" placeholder=form.phone.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.text class+="textarea" placeholder=form.text.label %}
+                  </div>
+                  <div class="col-md-12">
+                    <div class="privacy_block">
+                      {% render_field form.privacy  %} Настоящим подтверждаю, что я ознакомлен и согласен с <a href="{% url 'privacy' %}">политикой обработки персональных данных</a>.
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="send_btn">Отправить</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+      </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static extra_settings %}
+<header id="header">
+  <a href="{% if request.path == '#' %}{% else %}{% url 'index' %}{% endif %}">
+    <img src="{% static 'images/logo.png' %}" alt="" class="logo" />
+  </a>
+  <div class="nav_icon">
+    <span></span>
+  </div>
+  <nav>
+    <a href="{% if request.path == '#' %}{% else %}{% url 'projects' %}{% endif %}"
+      class="nav_button">
+      ПОРТФОЛИО
+    </a>
+    <a href="{% if request.path == '#' %}{% else %}{% url 'about' %}{% endif %}"
+      class="nav_button">
+      О НАС
+    </a>
+    <a data-goto="#services" href="{% if request.path == '#' %}{% else %}{% url 'index' %}{% endif %}#services" class="nav_button">УСЛУГИ</a>
+    <a data-goto="#footer" href="#footer" class="nav_button">КОНТАКТЫ</a>
+  </nav>
+</header>

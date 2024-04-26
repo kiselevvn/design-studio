@@ -1,0 +1,337 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+{% comment %}
+
+EXTRA SETTINGS EXAMPLE:
+get_setting 'SUBTITLE' default=''
+
+{% endcomment %}
+
+{% block content  %}
+
+
+
+<!-- banner -->
+<section class="banner_main ">
+  <div id="myCarousel" class="carousel slide banner1" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        {% for slide in offer_slides %}
+        <li data-target="#myCarousel" data-slide-to="{{ forloop.counter }}"></li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="carousel-caption relative">
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-md-6" style="background-image:url('{% static 'images/banner_ing.jpg' %}');background-size:cover;min-height:560px;">
+                    </div>
+                    <div class="col-md-6 offer-slide-part">
+                        <h1>{% get_setting 'TITLE' default='' %}</h1>
+                        <p>{% get_setting 'SUBTITLE' default='' %}</p>
+                        <a class="get_btn" href="#form" role="button">Записаться</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        {% for slide in offer_slides %}
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="carousel-caption relative">
+                <div class="row justify-content-center align-items-center">
+                  <div class="col-md-6" style="background-image:url('{{ slide.picture.url }}');background-size:cover;min-height:560px;">
+                  </div>
+                  <div class="col-md-6 offer-slide-part">
+                      <h1>{{ slide.title }}</h1>
+                      <p>{{ slide.text }}</p>
+                      <a class="get_btn" href="#form" role="button">Записаться</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% comment %} <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <span class="sr-only">Next</span>
+        </a> {% endcomment %}
+      </div>
+  </div>
+
+</section>
+<!-- end banner -->
+<div class="privacy_block mt-4">
+  <div class="privacy_block_card">
+    <a href="{% url 'privacy' %}">Политика в отношении обработки персональных данных.</a>
+  </div>
+</div>
+<div class="we_do">
+  <div class="container">
+      <div class="row" style="margin-bottom:80px;">
+        <div class="col-md-12">
+            <div class="titlepage">
+              <h2>О нас</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom:80px;">
+        <div class="col-md-7 col-sm-12 pa-4">
+          <div class="about-box text-right">
+            <h2 class="about__h"> </h2>
+            <p class="about__p text-md-right text-center">
+              <strong>Студия была открыта в августе 2018 года. Мы проводим обучающие курсы, а также принимаем клиентов каждый день с 9.00 до 21.30. У нас работают мастера с разного уровня квалификации, и разной ценовой категории, но тем не менее все выполняют свою работу качественно.</strong>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12"><img src="{% static 'images/studio/5.jpg' %}" alt=""></div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-4 col-sm-12 pa-4"><img src="{% static 'images/studio/3.jpg' %}" alt=""></div>
+        <div class="col-md-7 col-sm-12">
+          <div class="about-box">
+            <h2 class="about__h"></h2>
+            <p class="about__p text-md-left text-center"><strong>Наша студия всегда ставила акцент именно на качество и долговременность носки покрытия. У нас индивидуальный подход ко всем клиентам, способ маникюра и покрытие подбирается индивидуально с учетом пожеланий и особенностей ноготков и ручек.</strong></p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- what we do  -->
+<div id="about" class="we_do">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="titlepage">
+              <h2>Фото галерея</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        {% for photo in gallery_photo %}
+        <div class="col-lg-3 col-md-4 col-6 mb-4">
+          <a href="{{photo.picture.url}}"
+            data-fancybox="gallery"
+            class="hover-scale"
+          >
+            <img src="{{photo.picture.url}}" alt="{{photo.description}}"/>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+<!-- end what we do  -->
+<!-- about -->
+<div id="we-do" class="about">
+  <div class="container-fluid">
+      <div class="row justify-content-center"  >
+        <div class="col-12 col-md-4">
+            <div class="titlepage">
+              <h2>Сертификаты</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+          <div
+            class="fotorama h-100"
+            data-width=""
+            data-height="100%"
+            data-maxHeight="600px"
+            data-allowfullscreen="true"
+            data-nav="thumbs"
+            data-fit="contain"
+            >
+            {% for  certificate in certificates %}
+              <img  src="{{certificate.picture.url}}" alt="{{certificate.description}}">
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- end about -->
+<!-- our pricing -->
+<div id="pricing"  class="pricing ">
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-12">
+          <div class="titlepage">
+            <h2>Услуги</h2>
+          </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-around" style="margin-bottom:80px;" >
+      {% for category in category_service %}
+      <div class="col-12 col-md-5 my-4">
+        <div class="we_box">
+          <h3 class="">{{category.name}}</h3>
+          {% if category.description %}<p>{{ category.description }}</p>{% endif %}
+          <div class="my-4">
+            {% for service in category.services.all %}
+            <div class="price-position d-flex">
+              <p>{{service.name}}</p>
+              <div class="price-position__dots"></div>
+              <p><strong>{{service.price}} руб.</strong></p>
+            </div>
+            {% endfor %}
+          </div>
+          <a target="_blank" href="https://wa.me/{% get_setting 'WHATSAPP' default='79185818065' %}" class="we_box__link" >
+            Записаться в Whatsapp
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="col-12 col-md-6  my-4">
+        <div class="we_box">
+          <h3 class="">Дополнительные Услуги</h3>
+          <p>Цены на услуги в конкретных случаях могут различаться</p>
+          <div class="my-4">
+            {% for service in additional_services %}
+            <div class="price-position d-flex">
+              <p>{{service.name}}</p>
+              <div class="price-position__dots"></div>
+              <p><strong>{{service.price}} руб.</strong></p>
+            </div>
+            {% endfor %}
+          </div>
+          <a target="_blank" href="https://wa.me/{% get_setting 'WHATSAPP' default='79185818065' %}" class="we_box__link" >
+            Записаться в Whatsapp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="course" class="" style="background-image:url('{% static 'images/banner_two.jpg' %}');background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div style="background-color: rgba(0,0,0,.6);padding-top:50px;padding-bottom:50px;">
+      <div class="container" style="">
+        <div class="row  my-4">
+          <div class="col-md-12">
+              <div class="titlepage">
+                <h2>Цены курсов</h2>
+              </div>
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          {% for course in courses %}
+          <div class="col-md-4 mb-4 hover-scale">
+              <div class="pricing_box">
+                <div class="pricing_box_ti">
+                    <h3>{{course.price}}<strong>/ руб.</strong></h3>
+                </div>
+                <div class="our_pricing">
+                    <span>{{course.name}}</span>
+                    <p>{{course.description}}</p>
+                </div>
+              </div>
+              <a class="read_more mar_top" href="{% url 'course-buy' course.pk %}">Записаться</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end our pricing -->
+<!-- experts -->
+<div id="contact" class="experts">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="titlepage">
+              <h2>Наши мастера</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-md-12">
+            <div class="row justify-content-around">
+              {% for worker in workers %}
+              <div class="col-md-6">
+                <div id="exp" class="experts_box">
+                  <div class="experts_img">
+                      <figure><img src="{{worker.photo.url}}" alt="#"/></figure>
+                  </div>
+                  <div class="meet">
+                      <h3>{{worker.name}}</h3>
+                      <p>{{worker.description}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+
+              {% comment %} <div class="col-md-12">
+                  <a class="read_more mar_top exper" href="Javascript:void(0)"> Read More</a>
+              </div> {% endcomment %}
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- end experts -->
+<!--  contact -->
+<div id="form" class="contact" style="background-image: url('{% static 'images/banner_ing.jpg' %}');">
+  <div style="background-color: rgba(0,0,0,.6);">
+    <div class="container py-4"  style="background-color: rgba(0,0,0,.6);">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="titlepage mb-4" >
+              <h2 style="color: white !important;">Как с нами связаться?</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12 col-md-6">
+            <form id="request" class="main_form" method="POST" action="{% url 'message' %}">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col-md-12 ">
+                    {% comment %} <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> {% endcomment %}
+                    {% render_field form.name class+="contactus" placeholder=form.name.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.email class+="contactus" placeholder=form.email.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.phone class+="contactus" placeholder=form.phone.label %}
+                  </div>
+                  <div class="col-md-12">
+                    {% render_field form.text class+="textarea" placeholder=form.text.label %}
+                  </div>
+                  <div class="col-md-12">
+                    <div class="privacy_block">
+                      {% render_field form.privacy  %} Настоящим подтверждаю, что я ознакомлен и согласен с <a href="{% url 'privacy' %}">политикой обработки персональных данных</a>.
+                    </div>
+
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="send_btn">Отправить</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-6">
+          <iframe width="100%" height="80%" frameborder="0" style="min-height: 400px;" title="map" marginheight="0" marginwidth="0" scrolling="no" src="{% get_setting 'MAP' default='images/banner_ing.jpg' %}" ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end contact -->
+
+
+
+{% endblock %}

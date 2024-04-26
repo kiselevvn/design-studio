@@ -1,0 +1,53 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects/style.css' %}">
+{% endblock %}
+
+{% block content  %}
+<main>
+  <div class="last_projects">
+    <div class="title">
+      <p class="title_text">ПОРТФОЛИО</p>
+    </div>
+    <div class="projects">
+      {% for p in projects %}
+        <div style="background-image: url({{p.photo.url}})"><a href="{% url 'projects-detail' p.pk %}"><p>{{p.title}}</p></a></div>
+      {% empty %}
+        <div class="project27"><a href="#"><p>ЖК Западная Резиденция. 3-х комнатная квартира</p></a></div>
+        <div class="project26"><a href="#"><p>х. Ведерников. Небольшой сруб</p></a></div>
+        <div class="project25"><a href="#"><p>ст. Милютинская. Двухэтажный частный дом</p></a></div>
+        <div class="project24"><a href="#"><p>х. Усть-Койсуг. Одноэтажный загородный дом</p></a></div>
+        <div class="project23"><a href="#"><p>п. Янтарный. Многоэтажный загородный дом</p></a></div>
+        <div class="project22"><a href="#"><p>Многокомнатная квартира в Клубном доме на Пушкинской</p></a></div>
+        <div class="project21"><a href="#"><p>ЖК Красный Аксай. 2-х комнатная квартира в Эко-стиле</p></a></div>
+        <div class="project20"><a href="#"><p>Загородный дом дореволюционной постройки</p></a></div>
+        <div class="project19"><a href="#"><p>Роскошный минимализм в 3-х комнатной квартире</p></a></div>
+        <div class="project18"><a href="#"><p>Небольшой таунхаус для молодой семьи</p></a></div>
+        <div class="project17"><a href="#"><p>Аптека «Эвалар» на Халтуринском</p></a></div>
+        <div class="project16"><a href="#"><p>Аптека «Эвалар» на Семашко</p></a></div>
+        <div class="project15"><a href="#"><p>Небольшая однокомнатная квартира в эко-стиле</p></a></div>
+        <div class="project14"><a href="#"><p>Ресторан «Легенда». Реализованный проект</p></a></div>
+        <div class="project13"><a href="#"><p>«Ресторанчик» в частном доме</p></a></div>
+        <div class="project12"><a href="#"><p>4-х комнатная квартира на Горького</p></a></div>
+        <div class="project11"><a href="#"><p>Двухэтажный частный дом на ул. Канта</p></a></div>
+        <div class="project10"><a href="#"><p>Обувной бутик «MILANO»</p></a></div>
+        <div class="project9"><a href="#"><p>2-х комнатная квартира на ул. Извилистая</p></a></div>
+        <div class="project8"><a href="#"><p>4-х комнатная квартира на ул. Малюгиной</p></a></div>
+        <div class="project7"><a href="#"><p>3-х комнатная квартира в Ставрополе</p></a></div>
+        <div class="project6"><a href="#"><p>Дом в классическом стиле на ул. Кеплера</p></a></div>
+        <div class="project5"><a href="#"><p>Спа-зона в частном доме</p></a></div>
+        <div class="project4"><a href="#"><p>Частный дом в районе Левенцовка</p></a></div>
+        <div class="project3"><a href="#"><p>Проект Банкетного зала в г. Аксай</p></a></div>
+        <div class="project2"><a href="#"><p>Ресторан «Метрополь». Реализованный проект</p></a></div>
+        <div class="project1"><a href="#"><p>Частная гостиница «Malekon». Реализованный проект</p></a></div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
+

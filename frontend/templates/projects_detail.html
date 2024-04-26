@@ -1,0 +1,72 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+
+{% block extra_css %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/about/simple-lightbox.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects/objects/style.css' %}">
+<title>Дизайн-студия Вячеслава Борисова</title>
+<style>
+</style>
+
+
+{% endblock %}
+
+{% block content  %}
+<main>
+  <div class="banner" style="background: url({{ object.photo.url }});background-position: 0px -200px;background-attachment: fixed;background-size: 100% 100%; background-repeat: no-repeat;">
+
+    <p class="banner_text">{{ object.title }}</p>
+  </div>
+  <div class="main_title">
+    <div class="object_details">
+
+      <div class="detail">
+        Расположение:
+        <div class="detail_content">{{ object.location }}</div>
+      </div>
+
+      <div class="detail">
+        Площадь:
+        <div class="detail_content">{{ object.square }} м<sup>2</sup></div>
+      </div>
+
+      <div class="detail">
+        Стиль:
+        <div class="detail_content">{{ object.style }}</div>
+      </div>
+
+      <div class="detail">
+        Год:
+        <div class="detail_content">{{ object.year }}</div>
+      </div>
+
+    </div>
+    <div class="title">О проекте:</div>
+    <div class="title_content">{{object.description}}</div>
+  </div>
+  <div class="object">
+
+    {% for i in object.items.all %}
+      <div class="object_img">
+				<a href="{{ i.picture.url }}">
+					<img src="{{ i.picture.url }}" alt='{{ i.description }}'>
+				</a>
+				<div class="caption">{{ i.description }}</div>
+			</div>
+    {% endfor %}
+
+  </div>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about/simple-lightbox.min.js' %}"></script>
+<script type="text/javascript">
+  var lightbox = new SimpleLightbox('.object_img a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, loop: false, scrollZoom: false, overlayOpacity: 0.9,});
+</script>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+

@@ -1,0 +1,190 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+{% comment %}
+
+EXTRA SETTINGS EXAMPLE:
+get_setting 'SUBTITLE' default=''
+
+{% endcomment %}
+
+{% block content  %}
+
+	<main>
+		<div class="slider" id="slider">
+			<div class="slider_title">
+	  			<div class="slider_bold">Дизайн для людей</div>
+	  			<div class="slider_line"></div>
+	  			<div class="slider_light">Реализуй свои мечты с нами</div>
+	  		</div>
+	  		<div class="slider_buttons">
+	  			<a href="#popup" class="slider_button_callback">ЗАКАЗАТЬ ПРОЕКТ</a>
+				<a data-goto="#last_projects" href="{% url 'projects' %}" class="slider_button_projects">СМОТРЕТЬ ПРОЕКТЫ</a>
+	  		</div>
+	  		<div class="slider_flats">
+	  			<div><a href="tel:89085101060"><img src="{% static 'images/phone.png' %}" alt=""></a></div>
+	  			<div><a href="mailto:borisslaw@bk.ru"><img src="{% static 'images/mail.png' %}" alt=""></a></div>
+	  			<div><a href="www.instagram.com/borisslaw_design/"><img src="{% static 'images/instagram.png' %}" alt=""></a></div>
+	  			<div><a href="https://vk.com/borisslaw_design"><img src="{% static 'images/vk.png' %}" alt=""></a></div>
+	  			<div><a href="https://www.facebook.com/profile.php?id=100009102913836&mibextid=ZbWKwL"><img src="{% static 'images/facebook.png' %}" alt=""></a></div>
+	  			<div><a href="https://t.me/vyacheslav_borisov_design"><img src="{% static 'images/telegram.png' %}" alt=""></a></div>
+	  		</div>
+			<div class="swiper mySwiper">
+			    <div class="swiper-wrapper">
+				    <div class="swiper-slide"><img src="{% static 'images/slider_1.jpg' %}" alt=""></div>
+				    <div class="swiper-slide"><img src="{% static 'images/slider_2.jpg' %}" alt=""></div>
+				    <div class="swiper-slide"><img src="{% static 'images/slider_3.jpg' %}" alt=""></div>
+			    </div>
+	  		</div>
+		</div>
+		<div class="welcome">
+			<div class="welcome_title">
+				<div class="title_bold">ДОБРО ПОЖАЛОВАТЬ В ДИЗАЙН-СТУДИЮ ВЯЧЕСЛАВА БОРИСОВА</div>
+				<div class="title_light">Мы надеемся, что вы найдете здесь вдохновение!</div>
+			</div>
+			<div class="welcome_text">
+				<div class="welcome_left">На протяжении всего существования человечества нам сопутствует желание обустроить пространство вокруг себя.</div>
+				<div class="welcome_line"></div>
+				<div class="welcome_right">Дизайн интерьера - это создание пространства, в котором учитывается огромное количество составляющих: стиль, форма, источники света и их количество, колористика, фактура, ритмичность повторов, законы композиции и многое другое. Гармоничное сочетание всех этих элементов как раз и образует стильный и уютный интерьер, где будет комфортно всем, где обстановка располагает к отдыху или работе, где появляется естественное желание радоваться жизни и быть самим собой.</div>
+			</div>
+		</div>
+		<div class="last_projects" id="last_projects">
+			<div class="projects_title">
+				<div class="main_title">
+					<div class="title_bold">ПОСЛЕДНИЕ ПРОЕКТЫ</div>
+					<div class="title_light">Лучшие образцы дизайна нашей студии.</div>
+				</div>
+			</div>
+			<div class="projects">
+        {% for p in projects %}
+          <div style="background: url({{ p.photo.url }});background-size:cover;"><a href="{% url 'projects-detail' p.pk %}"><p>{{p.title}}</p></a></div>
+        {% empty %}
+          <div class="project1"><a href="#"><p>ЖК Западная Резиденция. 3-х комнатная квартира</p></a></div>
+          <div class="project2"><a href="#"><p>х. Ведерников. Небольшой сруб</p></a></div>
+          <div class="project3"><a href="#"><p>ст. Милютинская. Двухэтажный частный дом</p></a></div>
+          <div class="project4"><a href="#"><p>х. Усть-Койсуг. Одноэтажный загородный дом</p></a></div>
+          <div class="project5"><a href="#"><p>п. Янтарный. Многоэтажный загородный дом</p></a></div>
+        {% endfor %}
+
+			</div>
+			<div class="projects_button">
+				<a href="{% url 'projects' %}" class="button_text">СМОТРЕТЬ ВСЕ ПРОЕКТЫ</a>
+			</div>
+		</div>
+		<div class="services" id="services">
+			<div class="services_title">
+				<div class="main_title">
+					<div class="title_bold">НАШИ УСЛУГИ</div>
+					<div class="title_light">Мы предлагаем полный комплекс услуг - от создания дизайн-проекта до его реализации.</div>
+				</div>
+			</div>
+			<div class="services_list">
+				<div class="design">
+					<div class="design_img"><span>ДИЗАЙН-ПРОЕКТ</span></div>
+					<div class="design_text">
+						<div class="services_light"><b>Дизайн-проект</b> - пакет документов, которые содержат в себе информацию
+						касательно перепланировки, отделки, расстановки мебели и декорирования
+						дома или квартиры.  <br><br>
+						В стандартный дизайн-проект входит:
+							<ul>
+								<li>Обмерный план</li>
+								<li>Планировочные решения</li>
+								<li>Эскизы</li>
+								<li>3D Визуализация</li>
+								<li>План монтажа/демонтажа</li>
+								<li>План сантехнического оборудования</li>
+								<li>План полов + подогрев</li>
+								<li>План и разрезы потолков</li>
+								<li>План размещения декора</li>
+								<li>План привязки и разводки осветительного оборудования</li>
+								<li>План разводки выключателей и розеток</li>
+								<li>План развертки стен</li>
+								<li>Чертежи заказной мебели (если требуется в проекте)</li>
+								<li>План раскладки плитки</li>
+								<li>Ведомость используемых материалов</li>
+								<li>Таблица комплектации</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="vertical_line"></div>
+				<div class="complitation">
+					<div class="complitation_text">
+						<div class="services_light"><b>Комплектация</b> - это подбор, закупка, доставка и размещение чистовых отделочных материалов, мебели и интерьерного декора, сантехники и осветительных приборов на объекте. <br><br>
+						Услуга по комплектации объекта включает в себя:
+							<ul>
+								<li>Мониторинг наличия позиций товара, заказ, покупку и доставку всего необходимого.</li>
+								<li>Организацию и контроль за всем процессом комплектации объекта.</li>
+								<li>Подбор всех материалов, мебели, декора, текстиля, бытовой техники и электронного оборудования.</li>
+								<li>Составление технических заданий для поставщиков, запрос коммерческих предложений.</li>
+								<li>Заказ и контроль поставок оборудования и отделочных материалов.</li>
+								<li>Контроль сроков поставки. У нас собственная база надежных и проверенных поставщиков с большим ассортиментом мебели, декора и материалов. Это сэкономит ваше время, нервы и деньги.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="complitation_img"><span>КОМПЛЕКТАЦИЯ ОБЪЕКТА</span></div>
+				</div>
+					<div class="vertical_line"></div>
+				<div class="supervision">
+					<div class="supervision_img"><span>АВТОРСКИЙ НАДЗОР</span></div>
+					<div class="supervision_text">
+						<div class="services_light"><b>Авторский надзор</b> – это контроль дизайнером процесса ремонтно-строительных работ в строящемся или уже построенном помещении, чтобы проследить за точностью реализации дизайн-проекта, автором которого является. То есть мы следим за тем, чтобы воплощение соответствовало разработанной идее. Наша цель – создать такой интерьер, чтобы ожидания совпали с реальностью. <br><br>
+						Услуга надзора включает в себя:
+						<ul>
+							<li>Выезд дизайнер на объект.</li>
+							<li>Проверка соответствия проведенных работ существующим планам.</li>
+							<li>Контроль над закупкой качественных материалов, выбора цветов, соответствующих проекту.</li>
+							<li>Выстраивание коммуникаций с поставщиками, надзор над своевременной поставкой товаров.</li>
+							<li>Уточнение технических вопросов по чертежам.</li>
+							<li>Разъяснение работы с материалами, незнакомыми бригаде.</li>
+							<li>Внесение корректировок в авторские планы по согласованию с прорабом, строителями и мастерами.</li>
+							<li>Уведомление о ходе ремонта и консультации клиента.</li>
+						</ul>
+						Таким образом, заказывая услугу, вы:
+						<ul>
+							<li>Экономите собственное время.</li>
+							<li>Бережете нервы. Так как общение со строителями дело хлопотное.</li>
+							<li>Снижаете затраты на стройку. За переделку придется платить, а дизайнер предотвращает ошибки и следит за расходом материалов.</li>
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<div id="popup" class="popup">
+		<a href="#header" class="popup_area"></a>
+		<div class="popup_body">
+			<div class="popup_content">
+				<a href="#header" class="popup_close"><img src="{% static 'images/close.png' %}" alt=""></a>
+				<div class="popup_form">
+          {% if form %}
+					<form id="form" method="POST">
+            {% csrf_token %}
+						<div class="popup_title">Заполните форму, и мы перезвоним вам!</div>
+            {% render_field form.email class+="form_input" placeholder=form.email.label %}
+
+            {% render_field form.name class+="form_input" placeholder=form.name.label %}
+
+            {% render_field form.phone class+="form_input" placeholder=form.phone.label %}
+
+						<button type="submit" class="submit_button">ОТПРАВИТЬ</button>
+						<div class="status"></div>
+						<div class="pk_text">Нажимая кнопку "Отправить" я подтверждаю, что ознакомился (ознакомилась) с <br>
+						<a href="{% url 'privacy' %}" target="_blank">Политикой обработки персональных данных</a> и принимаю её
+						</div>
+					</form>
+          {% else %}
+						<div class="popup_title">Запрос отправлен</div>
+          {% endif %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+{% endblock %}

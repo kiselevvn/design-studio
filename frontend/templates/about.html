@@ -1,0 +1,426 @@
+{% extends "layouts/landing-layout.html" %}
+{% load static extra_settings widget_tweaks  %}
+
+{% comment %}
+
+EXTRA SETTINGS EXAMPLE:
+get_setting 'SUBTITLE' default=''
+
+{% endcomment %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about/simple-lightbox.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/about/slick.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/about/style.css' %}">
+{% endblock %}
+
+{% block content  %}
+
+
+<main>
+  <div class="title">
+    <p class="title_text">О НАС</p>
+  </div>
+  <div class="director">
+    <div class="director_img">
+      <img src="{% static 'images/about/img/portret.jpg' %}" alt="">
+    </div>
+    <div class="director_text">
+      <p class="director_text_name">ВЯЧЕСЛАВ БОРИСОВ</p>
+      <p class="director_text_job">Арт-директор</p>
+      <p class="director_text_quote">Для меня дизайн-студия Вячеслава Борисова — это не только работа над интерьером и архитектурными задачами — это отражение моей личности в творческом процессе и вся моя жизнь.</p>
+    </div>
+  </div>
+  <div class="studio">
+    <div class="studio_text">
+      <span class="studio_left">Наша дизайн-студия занимается проектированием жилых и общественных интерьеров, декорированием интерьеров и фасадов в различных стилях и направлениях, любого уровня сложности с полной комплектацией и авторским надзором.</span> <br>
+      <span class="studio_right">Наши специалисты направляют свои усилия в сторону повышения функциональных, эстетических и экологических удобств проектируемых объектов.</span> <br>
+      <span class="studio_left">Наш опыт и индивидуальный подход к каждому заказчику позволяют создавать красивые, продуманные и эксклюзивные дизайны любых помещений: от большого частного дома до маленькой однокомнатной квартиры, от гостиницы и ресторана до небольшого магазина или офиса.</span>
+    </div>
+  </div>
+  <div class="publication">
+    <div class="publication_title">
+      <p class="publication_title_text">ПУБЛИКАЦИИ</p>
+      <p class="publication_title_underText">Предлагаем вашему вниманию публикации лучших интерьеров нашей студии в известных журналах о мире дизайна интерьеров.</p>
+    </div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Ноябрь 2023</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_12">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-november-2023_1.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-november-2023_1.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-november-2023_2.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-november-2023_2.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-november-2023_3.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-november-2023_3.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Июль-Август 2023</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_11">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-august-2023_1.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-august-2023_1.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-august-2023_2.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-august-2023_2.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-august-2023_3.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-august-2023_3.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-august-2023_4.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-august-2023_4.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Май 2023</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_10">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mai-2023_1.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mai-2023_1.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mai-2023_2.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mai-2023_2.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Март 2023</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_9">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_0.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_0.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_1.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_1.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_2.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_2.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_3.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_3.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_4.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_4.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_5.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_5.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_6.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_6.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_3.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_7.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_4.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_8.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_5.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_9.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-mart-2023_6.png' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_10.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+      <div class="slider-two">
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_0.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_1.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_2.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_3.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_4.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_5.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_6.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_7.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_8.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_9.png' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-mart-2023_10.png' %}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Февраль 2023</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_8">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_3.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_3.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_4.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_4.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_5.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_5.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome-fevral-2023_6.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_6.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+      <div class="slider-two">
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_1.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_2.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_3.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_4.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_5.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome-fevral-2023_6.jpg' %}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Февраль 2022</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_7">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_3.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_3.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_4.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_4.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_5.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_5.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_fevral_2022_6.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_6.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+      <div class="slider-two">
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_1.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_2.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_3.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_4.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_5.jpg' %}"></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper' %}"><img data-lazy="{% static 'images/about/publications/hihome_fevral_2022_6.jpg' %}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Ноябрь 2022</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_6">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_topdizajn_2022_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_topdizajn_2022_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_topdizajn_2022_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_topdizajn_2022_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Ноябрь 2021</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_5">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_topdizajn_2021_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_topdizajn_2021_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_topdizajn_2021_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_topdizajn_2021_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Июль-Август 2022</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_4">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2022_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2022_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2022_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2022_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2022_3.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2022_3.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Июль-Август 2021</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_3">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2021_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2021_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2021_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2021_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2021_3.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2021_3.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Август 2020</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_2">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2020_1.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2020_1.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_portfolio_2020_2.jpg' %}"><img data-lazy="{% static 'images/about/publications/hihome_portfolio_2020_2.jpg' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Интерьерный журнал "Hi home"</p>
+      <p class="publication_magazine_date">Ноябрь 2019</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_1">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_2019_1.png' %}"><img data-lazy="{% static 'images/about/publications/hihome_2019_1.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/hihome_2019_2.png' %}"><img data-lazy="{% static 'images/about/publications/hihome_2019_2.png' %}" alt='Интерьерный журнал "Hi home"'></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="publication_magazine">
+      <p class="publication_magazine_name">Журнал "Благоустройство"</p>
+      <p class="publication_magazine_date">Август 2018</p>
+    </div>
+    <div class="slider_container">
+      <div class="slider zhurnal_0">
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/zhurnal_1.png' %}"><img data-lazy="{% static 'images/about/publications/zhurnal_1.png' %}" alt='Журнал "Благоустройство"'></a></div>
+        </div>
+        <div class="slider-block">
+          <div class="slider-wrapper"><a href="{% static 'images/about/publications/zhurnal_2.png' %}"><img data-lazy="{% static 'images/about/publications/zhurnal_2.png' %}" alt='Журнал "Благоустройство"'></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/about/jquerry.js' %}"></script>
+	<script src="{% static 'js/about/simple-lightbox.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/about/slick.min.js' %}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.slider').slick({
+				prevArrow: '<button class="btn slider-btn slider-prev"><img src="{% static "images/about/img/prev.png" %}" alt=""></button>',
+				nextArrow: '<button class="btn slider-btn slider-next"><img src="{% static "images/about/img/next.png" %}" alt=""></button>',
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				asNavFor: '.slider-two',
+			})
+			$('.slider-two').slick({
+				infinite: true,
+		        lazyLoad: 'ondemand',
+		        slidesToShow: 3,
+		        slidesToScroll: 1,
+		        asNavFor: '.slider',
+		        dots: false,
+		        arrows: false,
+		        centerMode: true,
+		        focusOnSelect: true,
+			})
+		});
+		var lightbox = new SimpleLightbox('.zhurnal_0 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_1 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_2 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_3 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_4 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_5 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_6 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_7 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_8 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_9 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_10 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_11 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+		var lightbox = new SimpleLightbox('.zhurnal_12 .slider-block a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, scrollZoom: false, overlayOpacity: 0.9,});
+	</script>
+{% endblock %}

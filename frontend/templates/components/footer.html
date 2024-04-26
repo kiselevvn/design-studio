@@ -1,0 +1,40 @@
+{% load static extra_settings %}
+<footer id="footer">
+  <img src="{% static 'images/logo.png' %}" alt="" class="footer_img" />
+  <div class="footer_text">
+    <span class="footer_text_bold">ГОТОВЫ ВАС ВЫСЛУШАТЬ!</span>
+    <span class="footer_text_light">Готовы сделать шаг в сторону своей мечты? Давайте начнем говорить о вашем проекте или идее и выясним, как мы можем Вам помочь.</span>
+  </div>
+  <div class="footer_info">
+    <div class="footer_address">
+      <span class="footer_bold">НАШ АДРЕС</span>
+      <span class="footer_light">{% get_setting 'City' default='г. Ростов-на-Дону' %}</span>
+      <span class="footer_light">{% get_setting 'Street' default='ул. Вавилова 6З' %}</span>
+    </div>
+    <div class="footer_contacts">
+      <span class="footer_bold">КОНТАКТЫ</span>
+      <span class="footer_light">{% get_setting 'Phone_1' default='+7 908 510 10 60' %}</span>
+      <span class="footer_light">{% get_setting 'Phone_2' default='+7 906 184 74 78' %}</span>
+    </div>
+  </div>
+  <div class="footer_flats">
+    <div>
+      <a href="tel:{% get_setting 'Link_phone' default='89085101060' %}"><img src="{% static '/images/phone.png' %}" alt="" /></a>
+    </div>
+    <div>
+      <a href="mailto:{% get_setting 'Link_mail' default='borisslaw@bk.ru' %}"><img src="{% static 'images/mail.png' %}" alt="" /></a>
+    </div>
+    <div>
+      <a href="{% get_setting 'Link_instagram' default='www.instagram.com/borisslaw_design/' %}"><img src="{% static 'images/instagram.png' %}" alt="" /></a>
+    </div>
+    <div>
+      <a href="{% get_setting 'Link_telegram' default='https://t.me/vyacheslav_borisov_design' %}"><img src="{% static 'images/telegram.png' %}" alt="" /></a>
+    </div>
+    <div>
+      <a href="{% get_setting 'Link_vk' default='https://vk.com/borisslaw_design' %}"><img src="{% static 'images/vk.png' %}" alt="" /></a>
+    </div>
+    <div>
+      <a href="{% get_setting 'Social_facebook' default='https://www.facebook.com/profile.php?id=100009102913836&mibextid=ZbWKwL' %}"><img src="{% static 'images/facebook.png' %}" alt="" /></a>
+    </div>
+  </div>
+</footer>
