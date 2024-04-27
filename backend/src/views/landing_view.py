@@ -17,7 +17,7 @@ class LandingView(View):
         """
         data = {}
         data["form"] = MessageForm()
-        data["projects"] = Portfolio.objects.all()
+        data["projects"] = Portfolio.objects.filter(is_published_index=True)
         return data
 
 

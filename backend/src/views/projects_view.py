@@ -15,19 +15,9 @@ class ProjectsView(View):
         Контекст данных лэндинга
         """
         data = {}
-        # data["form"] = MessageForm()
-
         data["projects"] = Portfolio.objects.filter(
             is_published=True
         )
-        # data["additional_services"] = AdditionalService.objects.filter(
-        #     is_published=True
-        # )
-        # data["offer_slides"] = OfferSlide.objects.filter(is_published=True)
-        # data["workers"] = Worker.objects.filter(is_published_landing=True)
-        # data["courses"] = Course.objects.filter(is_published=True)
-        # data["certificates"] = Сertificate.objects.filter(is_published=True)
-        # data["gallery_photo"] = Gallery.objects.filter(is_published=True)
         return data
 
 
@@ -36,7 +26,6 @@ class ProjectsView(View):
         Обработка GET запроса
         """
         data = self.get_data_object()
-        # form = MessageForm()
         return render(request, template_name=self.template_name, context={**data, })
 
     def post(self, request):
@@ -44,8 +33,4 @@ class ProjectsView(View):
         Обработка POST запроса
         """
         data = self.get_data_object()
-        # form = MessageForm(request.POST, request.FILES)
-        # if form.is_valid():
-        #     form_instance = form.save()
-        #     return render(request, template_name="thanks.html", context={})
         return render(request, template_name=self.template_name, context={**data, })
