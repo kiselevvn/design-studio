@@ -8,8 +8,8 @@
   <div class="footer_info">
     <div class="footer_address">
       <span class="footer_bold">НАШ АДРЕС</span>
-      <span class="footer_light">{% get_setting 'City' default='г. Ростов-на-Дону' %}</span>
-      <span class="footer_light">{% get_setting 'Street' default='ул. Вавилова 6З' %}</span>
+      <span class="footer_light">{% get_setting 'Address_сity' default='г. Ростов-на-Дону' %}</span>
+      <span class="footer_light">{% get_setting 'Address_street' default='ул. Вавилова 6З' %}</span>
     </div>
     <div class="footer_contacts">
       <span class="footer_bold">КОНТАКТЫ</span>
@@ -25,7 +25,7 @@
       <a href="mailto:{% get_setting 'Link_mail' default='borisslaw@bk.ru' %}"><img src="{% static 'images/mail.png' %}" alt="" /></a>
     </div>
     <div>
-      <a href="{% get_setting 'Link_instagram' default='www.instagram.com/borisslaw_design/' %}"><img src="{% static 'images/instagram.png' %}" alt="" /></a>
+      <a href="{% get_setting 'Link_instagram' %}"><img src="{% static 'images/instagram.png' %}" alt="" /></a>
     </div>
     <div>
       <a href="{% get_setting 'Link_telegram' default='https://t.me/vyacheslav_borisov_design' %}"><img src="{% static 'images/telegram.png' %}" alt="" /></a>
@@ -34,7 +34,7 @@
       <a href="{% get_setting 'Link_vk' default='https://vk.com/borisslaw_design' %}"><img src="{% static 'images/vk.png' %}" alt="" /></a>
     </div>
     <div>
-      <a href="{% get_setting 'Social_facebook' default='https://www.facebook.com/profile.php?id=100009102913836&mibextid=ZbWKwL' %}"><img src="{% static 'images/facebook.png' %}" alt="" /></a>
+      <a href="{% get_setting 'Link_facebook' default='https://www.facebook.com/profile.php?id=100009102913836&mibextid=ZbWKwL' %}"><img src="{% static 'images/facebook.png' %}" alt="" /></a>
     </div>
   </div>
 </footer>

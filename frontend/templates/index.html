@@ -22,12 +22,12 @@ get_setting 'SUBTITLE' default=''
 				<a data-goto="#last_projects" href="{% url 'projects' %}" class="slider_button_projects">СМОТРЕТЬ ПРОЕКТЫ</a>
 	  		</div>
 	  		<div class="slider_flats">
-	  			<div><a href="tel:89085101060"><img src="{% static 'images/phone.png' %}" alt=""></a></div>
-	  			<div><a href="mailto:borisslaw@bk.ru"><img src="{% static 'images/mail.png' %}" alt=""></a></div>
-	  			<div><a href="www.instagram.com/borisslaw_design/"><img src="{% static 'images/instagram.png' %}" alt=""></a></div>
-	  			<div><a href="https://vk.com/borisslaw_design"><img src="{% static 'images/vk.png' %}" alt=""></a></div>
-	  			<div><a href="https://www.facebook.com/profile.php?id=100009102913836&mibextid=ZbWKwL"><img src="{% static 'images/facebook.png' %}" alt=""></a></div>
-	  			<div><a href="https://t.me/vyacheslav_borisov_design"><img src="{% static 'images/telegram.png' %}" alt=""></a></div>
+	  			<div><a href="tel:{% get_setting 'Link_phone' %}"><img src="{% static 'images/phone.png' %}" alt=""></a></div>
+	  			<div><a href="mailto:{% get_setting 'Link_mail' %}"><img src="{% static 'images/mail.png' %}" alt=""></a></div>
+	  			<div><a href="{% get_setting 'Link_instagram' %}"><img src="{% static 'images/instagram.png' %}" alt=""></a></div>
+	  			<div><a href="{% get_setting 'Link_telegram' %}"><img src="{% static 'images/vk.png' %}" alt=""></a></div>
+	  			<div><a href="{% get_setting 'Link_vk' %}"><img src="{% static 'images/facebook.png' %}" alt=""></a></div>
+	  			<div><a href="{% get_setting 'Link_facebook' %}"><img src="{% static 'images/telegram.png' %}" alt=""></a></div>
 	  		</div>
 			<div class="swiper mySwiper">
 			    <div class="swiper-wrapper">
