@@ -17,44 +17,56 @@
 {% block content  %}
 <main>
   <div class="banner" style="background: url({{ object.photo.url }});background-position: 0px -200px;background-attachment: fixed;background-size: 100% 100%; background-repeat: no-repeat;">
-
-    <p class="banner_text">{{ object.title }}</p>
+    {% if object.title %}
+      <p class="banner_text">{{ object.title }}</p>\
+    {% endif %}
   </div>
   <div class="main_title">
-    <div class="object_details">
 
+    <div class="object_details">
+      {% if object.location %}
       <div class="detail">
         Расположение:
         <div class="detail_content">{{ object.location }}</div>
       </div>
+      {% endif %}
 
+      {% if object.square %}
       <div class="detail">
         Площадь:
         <div class="detail_content">{{ object.square }} м<sup>2</sup></div>
       </div>
+      {% endif %}
 
+      {% if object.style %}
       <div class="detail">
         Стиль:
         <div class="detail_content">{{ object.style }}</div>
       </div>
+      {% endif %}
 
+      {% if object.year %}
       <div class="detail">
         Год:
         <div class="detail_content">{{ object.year }}</div>
       </div>
-
+      {% endif %}
     </div>
-    <div class="title">О проекте:</div>
-    <div class="title_content">{{object.description}}</div>
+
+    {% if object.description %}
+      <div class="title">О проекте:</div>
+      <div class="title_content">{{object.description}}</div>
+    {% endif %}
+
   </div>
   <div class="object">
 
     {% for i in object.items.all %}
       <div class="object_img">
 				<a href="{{ i.picture.url }}">
-					<img src="{{ i.picture.url }}" alt='{{ i.description }}'>
+					<img src="{{ i.picture.url }}" {% if i.description %}alt='{{ i.description }}'{% endif %}>
 				</a>
-				<div class="caption">{{ i.description }}</div>
+				{% if i.description %}<div class="caption">{{ i.description }}</div>{% endif %}
 			</div>
     {% endfor %}
 
@@ -63,9 +75,13 @@
 {% endblock %}
 
 {% block extra_js %}
+
 <script src="{% static 'js/about/simple-lightbox.min.js' %}"></script>
 <script type="text/javascript">
-  var lightbox = new SimpleLightbox('.object_img a', { captionsData: 'alt', animationSpeed: 150, swipeClose: false, loop: false, scrollZoom: false, overlayOpacity: 0.9,});
+  var lightbox = new SimpleLightbox('.object_img a', {
+    captionsData: 'alt', animationSpeed: 150,
+    swipeClose: false, loop: false, scrollZoom: false,
+});
 </script>
 <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

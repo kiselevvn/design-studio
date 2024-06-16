@@ -11,5 +11,3 @@ class ProjectsDetailView(DetailView):
 
     def get_queryset(self):
         return Portfolio.objects.prefetch_related("items")
-
-# /
