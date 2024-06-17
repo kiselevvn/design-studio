@@ -1,5 +1,6 @@
 const iconMenu = document.querySelector('.nav_icon');
 const menuBody = document.querySelector('nav');
+
 if (iconMenu) {
 	iconMenu.addEventListener("click", function(e) {
 		document.body.classList.toggle('lock')
@@ -19,7 +20,7 @@ if (menuLinks.length > 0) {
 		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
 			const gotoBlock = document.querySelector(menuLink.dataset.goto);
 			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-			
+
 			if (iconMenu.classList.contains('active')) {
 				document.body.classList.remove('lock');
 				iconMenu.classList.remove('active');
