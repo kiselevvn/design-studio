@@ -16,7 +16,6 @@ class LandingView(View):
         Контекст данных лэндинга
         """
         data = {}
-        data["form"] = MessageForm()
         data["projects"] = Portfolio.objects.filter(is_published_index=True)
         return data
 
@@ -38,5 +37,5 @@ class LandingView(View):
         if form.is_valid():
             form_instance = form.save()
             form_instance.save()
-            return render(request, template_name="index.html", context={})
+            return render(request, template_name="thanks.html", context={})
         return render(request, template_name=self.template_name, context={**data, "form": form })

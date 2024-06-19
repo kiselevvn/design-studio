@@ -161,7 +161,7 @@ get_setting 'SUBTITLE' default=''
 				<a href="#header" class="popup_close"><img src="{% static 'images/close.png' %}" alt=""></a>
 				<div class="popup_form">
           {% if form %}
-					<form id="form" method="POST">
+					<form id="form" method="POST" action="/">
             {% csrf_token %}
 						<div class="popup_title">Заполните форму, и мы перезвоним вам!</div>
             {% render_field form.email class+="form_input" placeholder=form.email.label %}

@@ -17,6 +17,7 @@ urlpatterns = [
     path("projects/<int:pk>/", views.ProjectsDetailView.as_view(), name="projects-detail"),
     path("projects/", views.ProjectsView.as_view(), name="projects"),
     path("about/", views.AboutView.as_view(), name="about"),
+    path("thanks/", views.ThanksView.as_view(), name="thanks"),
     path("", views.LandingView.as_view(), name="index"),
 ]
 
