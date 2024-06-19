@@ -185,6 +185,20 @@ get_setting 'SUBTITLE' default=''
 		</div>
 	</div>
 
+  {% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    <script type="text/javascript">
+      var swiper = new Swiper(".mySwiper",{
+      simulateTouch: false,
+      loop: true,
+      autoplay: {
+        delay: 2400,
+        disableOnInteraction: false,
+      },
+      speed: 1500,
+      });
+    </script>
+  {% endblock %}
 
 {% endblock %}
